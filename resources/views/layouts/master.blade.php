@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="es-MX">
+<html dir="ltr" lang="{{ app()->getLocale() }}">
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -8,7 +8,6 @@
     ============================================= -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/dark.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/font-icons.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" />
@@ -17,7 +16,7 @@
 
     <title>Cuponera</title>
 </head>
-<body>
+<body class="stretched">
 
     <!-- The Main Wrapper
     ============================================= -->
@@ -27,19 +26,19 @@
         ============================================= -->
         @include('includes.header')
 
+        <!-- Slider
+        ============================================= -->
+        @yield('slider')
+
         <!-- Site Content
         ============================================= -->
         <section id="content">
 
             <div class="content-wrap">
 
-                <div class="container clearfix">
+                @yield('content')
 
-                    ...
-
-                </div>
-
-            </div>
+            </div><!--.content-wrap-->
 
         </section>
 
